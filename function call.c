@@ -11,6 +11,7 @@
 //无返回值 设置成void型
 //main（）函数，表示程序入口的特殊函数
 //函数体中定义的变量叫做局部变量，其作用域仅为函数体内部;体外为全局变量，可以被之后定义的所有函数引用
+//递归，即函数调用函数体本身，
 /* int addnum(int a,int b)//此处不添加（）,变量ab用来接收参数值
 {
     int x;
@@ -35,5 +36,28 @@ int calc(int a,int b)
     return n;
 }
  */
+//递归调用求n的阶层
+/*
+
+    long fac(int n){
+        int result = 0;
+        if(n == 0){
+            result = 1;//递归的终止条件   
+        } 
+        else{
+            result = n*fac(n-1);//递归的调用条件
+        }
+        return  result;
+    }
+    int main()//主函数写如何递归函数
+    {
+        int n = 0;
+        scanf("%d",&n);
+        int result = fac(n);//fac为阶层函数
+        printf("%1d",result);
+        return 0;
+    }
+    */
+
 
 
