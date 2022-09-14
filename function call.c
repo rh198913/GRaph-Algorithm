@@ -58,6 +58,27 @@ int calc(int a,int b)
         return 0;
     }
     */
+//接收一个整形值（无符号），按照顺序打印它的每一位。例如：1234 打印1 2 3 4
+void print(int n)//设置一个函数来接收需要的数值
+{
+    if(n>9)
+    {
+        print(n/10);//除以10得到整数
+    }
+    printf("%d \n",n%10);//模10得到输出的数
+
+}
+int main()
+{
+    unsigned int num = 0;
+    scanf("%d",&num);//1234
+    print(num);//把需要的数值打在屏幕上
+    //print(1234)拆开每一位直到只有一位数
+    //print(123)4
+    //print(12)34
+    //print(1)234
+    return 0;
+}
 
 
 
