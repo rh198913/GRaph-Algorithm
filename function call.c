@@ -59,6 +59,7 @@ int calc(int a,int b)
     }
     */
 //接收一个整形值（无符号），按照顺序打印它的每一位。例如：1234 打印1 2 3 4
+/*
 void print(int n)//设置一个函数来接收需要的数值
 {
     if(n>9)
@@ -78,6 +79,46 @@ int main()
     //print(12)34
     //print(1)234
     return 0;
+}
+*/
+//编写一个函数来比较两个数的大小
+/* int get_max(int x,int y)//函数的定义
+{
+    int z = 0;
+    if(x > y)
+        z = x;
+    else
+        z = y;
+    return z;
+}
+int main()
+{
+    int a = 20;
+    int b = 30;
+    //此处是函数的调用
+    int max = get_max(a,b);//把ab的值传给max函数比较大小
+    printf("%d\n",max);
+    return 0 ;
+} */
+//写一个函数，可以交换两个数之间的值
+ void  get_change(int*px,int*py)//函数不需要返回
+{
+    int z = 0 ;
+    z = *px;
+    *px = *py;
+    *py = z;  
+}
+int main()
+{
+    //int x = 20;//生成四个字节的空间
+    //int* pa = &a;//pa就是一个指针变量
+    //* pa = 10;//*pa就是a 打印输出10
+    int x = 20;
+    int y = 30;
+    get_change(&x,&y);
+    printf("%d\n%d\n",x,y);
+    return 0;
+    //如果不用指针的话调用失败，因为调用函数时又重新创建了空间
 }
 
 
