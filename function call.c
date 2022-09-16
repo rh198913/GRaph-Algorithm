@@ -100,6 +100,7 @@ int main()
     printf("%d\n",max);
     return 0 ;
 } */
+/*
 //写一个函数，可以交换两个数之间的值
  void  get_change(int*px,int*py)//函数不需要返回
 {
@@ -119,7 +120,95 @@ int main()
     printf("%d\n%d\n",x,y);
     return 0;
     //如果不用指针的话调用失败，因为调用函数时又重新创建了空间
+}*/
+//请输出1-100所有的素数
+/* is_prime(int n)//
+{ 
+    int j = 0;//素数是2到n-1的数
+    for(j = 2;j < n;j++)
+    {
+        if(n % j == 0)
+        return 0;//如果能被其他值整除，那就不是素数
+    }
+    return 1;
 }
+int main()
+{
+   int i;
+   int count = 0;
+   for(i = 2;i<=100;i++) 
+   {
+       if(is_prime(i) == 1)//判断i是否为素数
+       {
+           count++;
+           printf("%d\n",i); 
+       }  
+}
+printf("质数个数为：%d\n",count);
+return 0;
+} */
+//写一个函数打印1000 -2000闰年的年数
+/* int is_leap(int n)
+{
+    if((n % 4 == 0 && n % 100 != 0) || (n % 400 == 0))//最简单的写发生是直接返回这串关系
+        return 1;//两种情况都可，所以用或，判断关系用逻辑运算符
+    else
+        return 0;
+}
+int main()
+{
+    int i = 0;
+    int count = 0;
+    for(i= 1000;i<=2000;i++)
+    {
+        if(is_leap(i) == 1)//调用的时候记住代入函数的值i
+        {
+            count++;
+            printf("%d",i);
+        }
+    }
+    printf("%d\n",count);
+    return 0;
+// } */
+//写一个函数，实现整型有序数组的二分法查找
+int binary_search(int arr[],int key,int sz)
+{
+    int left = 0;
+    int right = sz-1;
+    int mid = (left + right) / 2;
+    while(left <= right )//可能是等于的情况，必须建立left<right的有序数组中才能执行 
+    {
+        if(arr[mid]> key)//值在左边
+        {
+            right  = mid -1;    
+        }else if(arr[mid]< key)//值在右边
+        {
+            left = mid + 1;
+        }else
+        {
+            return mid;//最后得到结果
+        }
+    }
+    return -1;//找不到的情况
+}
+int main()
+{
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int key = 8;//找8这个数字
+    int sz = sizeof(arr) / sizeof(arr[0]);//数组的长度为数组总长度/一个元素的大小40/4
+    //找到了就返回找到位置的下标,z找不到返回-1
+    int ret = binary_search(arr,key,sz);
+    if(-1 == ret)
+    {
+        printf("没有找到8的值\n");
+    }else
+    {
+    printf("找到了，下标是：%d\n",ret);
+    }
+    return 0;
+}
+
+
 
 
 
