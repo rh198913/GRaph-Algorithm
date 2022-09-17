@@ -171,7 +171,7 @@ int main()
     return 0;
 // } */
 //写一个函数，实现整型有序数组的二分法查找
-int binary_search(int arr[],int key,int sz)
+int binary_search(int arr[],int key,int sz)//挂羊头卖狗肉，其实传参传的是首地址，此处数组没写大小，实际就是首地址。
 {
     int left = 0;
     int right = sz-1;
@@ -197,7 +197,7 @@ int main()
     int key = 8;//找8这个数字
     int sz = sizeof(arr) / sizeof(arr[0]);//数组的长度为数组总长度/一个元素的大小40/4
     //找到了就返回找到位置的下标,z找不到返回-1
-    int ret = binary_search(arr,key,sz);
+    int ret = binary_search(arr,key,sz);//实际一个定义成指针
     if(-1 == ret)
     {
         printf("没有找到8的值\n");
