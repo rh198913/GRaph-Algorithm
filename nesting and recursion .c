@@ -66,6 +66,23 @@ int main()
 1+1+my_strlen("c")
 1+1+1+my_strlen("")
 1+1+1+0 */*/
+//编写一个阶层函数
+int Fac(int n)//一般为阶层函数，需要自己定义
+{
+    if(n <= 1)
+        return 1;
+    else
+        return n * Fac(n - 1);
+}
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int ret = Fac(n);
+    printf ("%d\n",ret);
+    return 0;
+}
+
 
 
 
