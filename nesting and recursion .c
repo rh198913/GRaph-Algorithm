@@ -105,7 +105,7 @@ int main()//进阶方法
     int flag = 1;//定义一个变量
     for(i = 1;i<=100;i++)
     {
-        sum += flag*1.0/i;
+        sum += flag*1.0/i;//分母的来源，以及使用浮点数定义
         flag = -flag;//下一次循环的时候变成-flag，依次循环变成1-11-11-1....
     }
     printf("%f\n",sum);
