@@ -67,7 +67,7 @@ int main()
 1+1+1+my_strlen("")
 1+1+1+0 */*/
 //编写一个阶层函数
-int Fac(int n)//一般为阶层函数，需要自己定义
+/*int Fac(int n)//一般为阶层函数，需要自己定义
 {
     if(n <= 1)
         return 1;
@@ -81,7 +81,37 @@ int main()
     int ret = Fac(n);
     printf ("%d\n",ret);
     return 0;
+}*/
+//计算1/1-1/2+1/3_1/4.....1/99-u1/100
+/* int main()//原始方法
+{
+    int i = 0;
+    double sum = 0.0;
+    for(i = 1;i<=100;i++)
+    {
+        if(i%2 == 0)
+            sum -= 1.0/i;//奇偶数判断 
+        else
+            sum += 1.0/i;
+    }
+    printf("%f\n",sum);
+    return 0;
+} */
+//计算1/1-1/2+1/3_1/4.....1/99-u1/100
+int main()//进阶方法
+{
+    int i = 0;
+    double sum = 0.0;
+    int flag = 1;//定义一个变量
+    for(i = 1;i<=100;i++)
+    {
+        sum += flag*1.0/i;
+        flag = -flag;//下一次循环的时候变成-flag，依次循环变成1-11-11-1....
+    }
+    printf("%f\n",sum);
+    return 0;
 }
+
 
 
 
