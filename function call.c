@@ -171,6 +171,7 @@ int main()
     return 0;
 // } */
 //写一个函数，实现整型有序数组的二分法查找
+/*
 int binary_search(int arr[],int key,int sz)//挂羊头卖狗肉，其实传参传的是首地址，此处数组没写大小，实际就是首地址。
 {
     int left = 0;
@@ -206,7 +207,22 @@ int main()
     printf("找到了，下标是：%d\n",ret);
     }
     return 0;
-}
+}*/
+int main()
+{
+    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int i = 0;
+    int max = 0;//此处应该是arr[0]数组中的某个元素，剩下的几个元素跟max比较
+    for(i=0;i<10;i++)//此处i= 1,打擂台的模式
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    printf("%d\n",max);
+    return 0;
+}//此处如果全是负数就不行，
 
 
 
