@@ -239,9 +239,9 @@ free(temp);
     arr[i] = itmp;
     left = 0;right = i-1;
     mid = (left + right)/2;
-    while(left < right){
-      if(itmp<mid)
-        right = mid -1;
+    while(left < right){//循环结束的条件
+      if(itmp<mid)//当插入值小于中间值时，说明在左边
+        right = mid -1;//左边折半成新的数组
       if(itmp > mid)
         left = mid + 1;
      
@@ -256,8 +256,8 @@ int main()
 {
   int arr[9] = {1,8,15,24,-4,20,65,88,44};
   int len=sizeof(arr)/sizeof(int);
-  binary_insert(arr,len);
-  for(int i = 0;i<9;i++){
+  binary_insert(arr,len);//主函数调用前面所写的折半插入排序法
+  for(int i = 0;i<9;i++){//此处是将i初始化，for循环打印出所有的数
     printf("%d",arr[i]);
   }
   printf("\n");
