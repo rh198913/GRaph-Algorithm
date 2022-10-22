@@ -87,4 +87,59 @@ int main()
             }
         }
     }
-} 
+}
+//俄式算法，思想偶数(m*n = n/2 * 2m) 奇数((n-1)2+2m + m)
+ /* int russia(int n,int m)//非递归算法
+{
+	int sum = 0; 
+	int a = 0;
+	if(n == 1)
+	    return m;
+	while(n != 1)
+	{
+		if(n%2 == 0){
+			n = n/2;
+	  	    m *= 2;
+		printf("%d %d\n",n,m);
+		}
+		else{
+			n = (n-1)/2;
+            a += m;//a用来储存奇数时m的值
+			m = m * 2;//m再乘以2
+		    printf("%d %d\n",n,m);
+		}
+	}
+    
+	sum = m + a;
+	//当while循环结束时，n存的为奇数时的值+ m的值，得到sum 
+	return sum;	
+}
+int main()
+{
+	int m,n;
+	int mul;
+	printf("请输入两个数:");
+	scanf("%d,%d",&n,&m);//注，键盘输入格式需要一致，不然程序会出现错误
+	mul = russia(n,m);
+    printf("最后结果是:%d\n",mul);
+}  */
+ int russia(int n,int m)//递归算法
+{
+	if(n == 1)//=用作赋值运算，==用作比较
+	    return m;//如果此处为等号，就会将1赋值给n最后输出m的值为65
+	if(n % 2 == 0)
+		return russia(n/2,m*2);
+	else{
+		return russia(n-1)/2,m*2 + m;
+	}
+}
+int main()
+{
+	int n,m,a;
+	printf("请输入两个需要相乘的数：");
+	scanf("%d%d",&n,&m);
+	a = russia( n,m);
+	printf("最后结果是:%d\n",a);
+    return 0;
+}
+ 
