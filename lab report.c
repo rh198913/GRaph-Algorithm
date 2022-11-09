@@ -123,6 +123,7 @@ int main()
 	mul = russia(n,m);
     printf("最后结果是:%d\n",mul);
 }  */
+/*
  int russia(int n,int m)//递归算法
 {
 	if(n == 1)//=用作赋值运算，==用作比较
@@ -142,4 +143,28 @@ int main()
 	printf("最后结果是:%d\n",a);
     return 0;
 }
+*/
+//金字塔
+void pyamind(int n){
+	int i,j;
+	for(i = 1;i <= n;i++){
+		for(j= 1;j<= n-i;j++){
+			printf(" ");
+		}
+		for(j = 1;j<=i ;j++){
+			printf("%d ",i);
+		}
+		printf("\n");
+	}
+
+}
+int main(){
+	int n;
+	printf("enter n:");
+	scanf("%d",&n);
+	pyamind(n);
+	return 0;
+}
+
+
  
